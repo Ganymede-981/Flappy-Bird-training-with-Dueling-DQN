@@ -1,0 +1,6 @@
+torch
+gymnasium[box2d]
+flappy-bird-gymnasium
+numpy
+opencv-python
+matplotlib
