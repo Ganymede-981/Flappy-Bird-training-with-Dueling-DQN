@@ -40,8 +40,8 @@ This helps the agent learn **which states are valuable** even before knowing the
 ┣ 📜 duel.py # Dueling DQN model architecture
 ┣ 📜 flappy.py # Training script
 ┣ 📜 test.py # Evaluation / Testing script
-┣ 📜 flappy_dueling_dqn_step200000.pth # Pre-trained weights
 ┣ 📂 models # (Optional) model saving folder
+ ┣ 📜 flappy_dueling_dqn_step200000.pth # Pre-trained weights
 ```
 
 ---
@@ -54,3 +54,9 @@ This helps the agent learn **which states are valuable** even before knowing the
 2. Install dependencies  
    ```bash
    pip install -r requirements.txt
+
+This is a GIF and the stats of the test for the model trained for 200000 steps
+
+![flappy gif](https://github.com/user-attachments/assets/75c5aaad-42ce-432d-807b-aebf67da341f)
+<img width="638" height="107" alt="image" src="https://github.com/user-attachments/assets/855cfa41-093d-4dd8-b076-d5a1520c0172" />
+
