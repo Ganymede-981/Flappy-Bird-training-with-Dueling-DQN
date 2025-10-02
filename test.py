@@ -5,15 +5,11 @@ import cv2
 import numpy as np
 from collections import deque
 
-# --- must match training config ---
 FRAME_SIZE = (84, 84)
 STACK_N = 4
 
-# -----------------------------
-# Preprocessing
-# -----------------------------
 def to_gray84(obs):
-    """Convert RGB -> grayscale (84x84), normalize to [0,1]."""
+    #Convert RGB to grayscale (84x84) and normalize to [0,1]
     if len(obs.shape) == 3 and obs.shape[2] == 3:
         obs = cv2.cvtColor(obs, cv2.COLOR_RGB2GRAY)
     obs = cv2.resize(obs, FRAME_SIZE, interpolation=cv2.INTER_AREA)
@@ -27,9 +23,6 @@ def update_stack(stack, new_frame):
     stack[-1] = new_frame
     return stack
 
-# -----------------------------
-# Model (must match training)
-# -----------------------------
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -59,9 +52,6 @@ class DQN(nn.Module):
         A = self.adv(z)
         return V + (A - A.mean(dim=1, keepdim=True))
 
-# -----------------------------
-# Test loop
-# -----------------------------
 @torch.no_grad()
 def test(model_path, episodes=5, render=True):
     env = gym.make("FlappyBird-v0", render_mode="human" if render else None)
@@ -99,5 +89,5 @@ def test(model_path, episodes=5, render=True):
     env.close()
 
 if __name__ == "__main__":
-    # Change this to your model filename
-    test("flappy_dueling_dqn_step200000.pth", episodes=5, render=True)
+    test("models/flappy_dueling_dqn_step200000.pth", episodes=5, render=True)
+
