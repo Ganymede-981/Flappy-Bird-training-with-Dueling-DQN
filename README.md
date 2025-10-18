@@ -39,8 +39,8 @@ This helps the agent learn **which states are valuable** even before knowing the
 ┣ 📜 requirements.txt # Python dependencies
 ┣ 📜 duel.py # Dueling DQN model architecture
 ┣ 📜 flappy.py # Training script
-┣ 📜 test.py # Evaluation / Testing script
-┣ 📂 models # (Optional) model saving folder
+┣ 📜 test.py # Testing script
+┣ 📂 models 
  ┣ 📜 flappy_dueling_dqn_step200000.pth # Pre-trained weights
 ```
 
