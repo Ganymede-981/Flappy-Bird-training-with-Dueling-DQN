@@ -23,10 +23,9 @@ It splits the Q-value estimation into two streams:
 - **Advantage Stream (A(s,a))** → how good it is to take a specific action in that state  
 
 The final Q-value is computed as:
-\[
-Q(s,a) = V(s) + (A(s,a) - \frac{1}{|A|} \sum_{a'} A(s,a'))
-\]
-
+```math
+ Q(s,a) = V(s) + (A(s,a) - \frac{1}{|A|} \sum_{a'} A(s,a')) 
+```
 This helps the agent learn **which states are valuable** even before knowing the best action.
 
 ---
